@@ -2,13 +2,15 @@ void main() {
   print('Mobil===============');
   Mobil Tesla = new Mobil(roda: 4);
   Tesla.jmlRoda(Tesla.roda);
+  Tesla.berkendara();
 
   print('Motor===============');
   Motor Supra = new Motor(roda: 2);
   Supra.jmlRoda(Supra.roda);
+  Supra.berkendara();
 }
 
-class Kendaraan {
+abstract class Kendaraan {
   String suaraKlakson = 'Om telolet om';
 
   void klakson() {
@@ -18,6 +20,8 @@ class Kendaraan {
   void jmlRoda(int roda) {
     print(roda);
   }
+
+  void berkendara();
 }
 
 class Mobil extends Kendaraan {
@@ -29,6 +33,11 @@ class Mobil extends Kendaraan {
     print('Jumlah Roda Mobile: $roda');
     super.jmlRoda(roda);
   }
+
+  @override
+  void berkendara() {
+    print('Melaju touring');
+  }
 }
 
 class Motor extends Kendaraan {
@@ -39,5 +48,10 @@ class Motor extends Kendaraan {
   void jmlRoda(int roda) {
     print('Jumlah Roda Motor: $roda');
     super.jmlRoda(roda);
+  }
+
+  @override
+  void berkendara() {
+    print('Melaju motor');
   }
 }
