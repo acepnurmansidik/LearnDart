@@ -25,6 +25,12 @@ void main() {
   print(rekeningDian.namaBank);
   rekeningDian.setBankName = 'BRO';
   print(rekeningDian.namaBank);
+  print("==============================");
+  // multiple constructor
+  RekeningBank rekeningGopay=new RekeningBank.Gopay(namaPemilik:'Gojek');
+  print(rekeningGopay.getOwner);
+  print(rekeningGopay.getBankName);
+  print(rekeningGopay.getSaldo);
 }
 
 class RekeningBank {
@@ -61,6 +67,8 @@ class RekeningBank {
 
 // constructor
   RekeningBank({this.namaPemilik, this.namaBank, this.saldo, this.email});
+// multiple constructor
+  RekeningBank.Gopay({this.namaBank='Gopay Service',this.namaPemilik,this.saldo,this.email});
 
   cekSaldo() {
     print('Saldo anda saat ini: Rp.${saldo}');
