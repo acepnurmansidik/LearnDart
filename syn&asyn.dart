@@ -8,6 +8,6 @@ Future<String> printData() async {
   return 'data: $data';
 }
 
-Future<String> fetchData() async {
-  return await Future.delayed(Duration(seconds: 5), () => 'fetch data');
+Future<String> fetchData() {
+  return Future.delayed(Duration(seconds: 5), () => 'fetch data');
 }
