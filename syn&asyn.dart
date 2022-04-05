@@ -1,6 +1,5 @@
-void main() async{
+Future<void> main() async{
   print(await printData());
-  // print(await fetchData());
   print('Data has been obtained');
 }
 
@@ -10,5 +9,5 @@ Future<String> printData() async {
 }
 
 Future<String> fetchData() async {
-  return await Future.delayed(Duration(seconds: 1), () => 'fetch data');
+  return await Future.delayed(Duration(seconds: 5), () => 'fetch data');
 }
